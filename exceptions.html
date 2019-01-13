@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>Exceptions</title>
+    <meta name="description" content="Throwing errors">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="/css/site.8b05a34b.css">
+    <link rel="icon" href="/favicon-32.png">
+    <script src="/js/site.73b55f3c.js"></script>
+</head>
+
+<body>
+
+<div class="container small center">
+    <div class="menu">
+    <button class="menu-button" title="Open Menu">
+        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M7 3H2v14h5V3zm2 0v14h9V3H9zM0 3c0-1.1.9-2 2-2h16a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3zm3 1h3v2H3V4zm0 3h3v2H3V7zm0 3h3v2H3v-2z"/></svg></div>
+        Table of Contents
+    </button>
+</div>
+
+    <h1>Exceptions</h1>
+    <h3 class="subtitle">Throwing errors</h3>
+    <p>Sometimes things go wrong when someone uses your code. How do we handle this situation?
+PHP has Exceptions to define errors and the ability to <code>throw</code> them to stop code
+execution and tell the user of your code that something is wrong.</p>
+<pre><code class="language-php">&lt;?php
+
+class Processor
+{
+    public function charge($creditCard)
+    {
+        if (strlen($creditCard-&gt;getNumber()) !== 16) {
+            throw new Exception('Credit card is not right');
+        }
+    }
+}</code></pre>
+<p>In this case, if someone tried to use the <code>Processor</code> class
+to charge a credit card number that is not 16 characters long, an
+<code>Exception</code> will be thrown which stops the rest of the code from running.</p>
+<pre><code class="language-php">$processor = new Processor();
+$processor-&gt;charge('1234');</code></pre>
+<p>A developer who wants to prevent an exception from stopping code execution
+can catch the exception and use it for logging or display the error to a user.</p>
+<p>Just wrap the code that might throw an exception with the keyword <code>try</code> and braces
+followed by <code>catch</code>, the exception type in parentheses and more braces.</p>
+<pre><code class="language-php">try {
+    $processor-&gt;charge('1234');
+} catch (Exception $e) {
+    echo $e-&gt;getMessage() . "\n";
+}</code></pre>
+<p>You can make your own custom exceptions as well. They are just classes
+that extend the <code>Exception</code> class.</p>
+<pre><code class="language-php">class MyCustomException extends Exception {}</code></pre>
+<p>Then, you can try to catch your exception instead of the base exception.</p>
+<pre><code class="language-php">try {
+    throw new MyCustomException('I am a custom exception');
+} catch (MyCustomException $e) {
+    echo "Caught MyCustomException\n";
+}</code></pre>
+<p>Since all exceptions inherit from <code>Exception</code>, catching
+<code>Exception</code> will catch any and all exceptions that might be thrown.</p>
+<pre><code class="language-php">try {
+    throw new MyCustomException('I inherit from Exception');
+} catch (Exception $e) {
+    echo "Still caught MyCustomException\n";
+}</code></pre>
+<p>You can also create multiple catch blocks to handle different types of exceptions in
+one try-catch.</p>
+<pre><code class="language-php">try {
+    throw new MyCustomException('I am being thrown again');
+} catch (MyCustomException $e) {
+    echo "MyCustomException was caught\n";
+} catch (Exception $e) {
+    echo "Just in case a different exception is thrown\n";
+}</code></pre>
+    <div class="clearfix"></div>
+    <div class="navigate-links">
+                    <a href="/abstract.html" title="Previous" id="prev-link">
+                <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 20a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm8-10a8 8 0 1 0-16 0 8 8 0 0 0 16 0zM7.46 9.3L11 5.75l1.41 1.41L9.6 10l2.82 2.83L11 14.24 6.76 10l.7-.7z"/></svg></div>
+                Previous
+            </a>
+                    </div>
+</div>
+
+
+<div class="modal closed">
+    <div class="modal-content">
+        <button class="modal-button right" title="Close">
+            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm1.41-1.41A8 8 0 1 0 15.66 4.34 8 8 0 0 0 4.34 15.66zm9.9-8.49L11.41 10l2.83 2.83-1.41 1.41L10 11.41l-2.83 2.83-1.41-1.41L8.59 10 5.76 7.17l1.41-1.41L10 8.59l2.83-2.83 1.41 1.41z"/></svg></div>
+        </button>
+        <div class="table-of-contents">
+    <h4>Table of Contents</h4>
+    <ul class="list-plain">
+        <li><a href="/">Preface</a></li>
+        <li><a href="/installing-php.html">Installing PHP</a></li>
+    </ul>
+    <ol>
+        <li><a href="/basics.html">Basics</a></li>
+        <li><a href="/variables.html">Variables</a></li>
+        <li><a href="/arithmetic.html">Arithmetic</a></li>
+        <li><a href="/strings.html">Strings</a></li>
+        <li><a href="/comparisons.html">Comparisons</a></li>
+        <li><a href="/boolean-logic.html">Boolean Logic</a></li>
+        <li><a href="/conditionals.html">Conditionals</a></li>
+        <li><a href="/loops.html">Loops</a></li>
+        <li><a href="/arrays.html">Arrays</a></li>
+        <li><a href="/functions.html">Functions</a></li>
+        <li><a href="/classes.html">Classes</a></li>
+        <li><a href="/classes-inheritance.html">Classes: Inheritance</a></li>
+        <li><a href="/classes-visibility.html">Classes: Visibility</a></li>
+        <li><a href="/classes-constructor.html">Classes: Constructor</a></li>
+        <li><a href="/static.html">Static</a></li>
+        <li><a href="/interfaces.html">Interfaces</a></li>
+        <li><a href="/abstract.html">Abstract Classes</a></li>
+        <li><a href="/exceptions.html">Exceptions</a></li>
+    </ol>
+    <a href="/credits.html">Credits</a>
+</div>
+    </div>
+</div>
+</body>
+
+</html>

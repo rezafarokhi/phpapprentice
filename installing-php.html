@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>PHP Apprentice - Installing PHP</title>
+    <meta name="description" content="An online book for learning PHP">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="/css/site.8b05a34b.css">
+    <link rel="icon" href="/favicon-32.png">
+    <script src="/js/site.73b55f3c.js"></script>
+</head>
+
+<body>
+
+<div class="container small center">
+    <div class="menu">
+    <button class="menu-button" title="Open Menu">
+        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M7 3H2v14h5V3zm2 0v14h9V3H9zM0 3c0-1.1.9-2 2-2h16a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3zm3 1h3v2H3V4zm0 3h3v2H3V7zm0 3h3v2H3v-2z"/></svg></div>
+        Table of Contents
+    </button>
+</div>
+
+    <div>
+        <h1>Installing PHP</h1>
+        <h2>Windows 10</h2>
+        <ol class="body-ol">
+            <li>Download PHP from the <a href="https://windows.php.net/download">PHP For Windows</a> site. I recommend downloading the non-thread safe PHP 7.1 or 7.2 (unless you want to use Apache and you know if you do). You will also need to choose 32 bit (x86) or 64 bit (x64) depending on your version of Windows.</li>
+            <li>Download the corresponding Visual C++ Redistributable from the same site. For PHP 7.1, it is VC14 and for PHP 7.2, it is VC15.</li>
+            <li>Install the VC redistrubutable using the downloaded executable.</li>
+            <li>The PHP download comes in a zip folder. Extract the zip folder into your user directory in a folder named <code>php</code>. The path should look like <code>C:\Users\username\php</code>.</li>
+            <li>Next, we need to add PHP to your environment variables path. Open "System" under "Control Panel". Go to the "Advanced" tab and select "Environment Variables". In the "User variables" section, select "Path" and click the "Edit" button. You will see a list of different folder paths. Add the PHP path to the list using the "Add" button. The PHP path is the same folder where you extracted PHP.</li>
+            <li>Now, you can open PowerShell or Command Prompt and type <code>php -v</code> to verify PHP was installed correctly. It will return the installed version of PHP on your system.</li>
+        </ol>
+
+        <h2>MacOS</h2>
+        <p>Good news! Each version of MacOS comes with PHP by default. However, if you are running an older version of MacOS or OS X, then you will need to manually install a new version of PHP. To check your current version, open Terminal and type <code>php -v</code>. You will need at least PHP 7.1 on your computer to use all the features in these tutorials.</p>
+        <ol class="body-ol">
+            <li>Install <a href="https://brew.sh/">Homebrew</a>.</li>
+            <li>Run <code>brew install php</code> in Terminal.</li>
+            <li>Check your version is correct by running <code>php -v</code> in Terminal.</li>
+        </ol>
+    </div>
+</div>
+
+<div class="modal closed">
+    <div class="modal-content">
+        <button class="modal-button right" title="Close">
+            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm1.41-1.41A8 8 0 1 0 15.66 4.34 8 8 0 0 0 4.34 15.66zm9.9-8.49L11.41 10l2.83 2.83-1.41 1.41L10 11.41l-2.83 2.83-1.41-1.41L8.59 10 5.76 7.17l1.41-1.41L10 8.59l2.83-2.83 1.41 1.41z"/></svg></div>
+        </button>
+        <div class="table-of-contents">
+    <h4>Table of Contents</h4>
+    <ul class="list-plain">
+        <li><a href="/">Preface</a></li>
+        <li><a href="/installing-php.html">Installing PHP</a></li>
+    </ul>
+    <ol>
+        <li><a href="/basics.html">Basics</a></li>
+        <li><a href="/variables.html">Variables</a></li>
+        <li><a href="/arithmetic.html">Arithmetic</a></li>
+        <li><a href="/strings.html">Strings</a></li>
+        <li><a href="/comparisons.html">Comparisons</a></li>
+        <li><a href="/boolean-logic.html">Boolean Logic</a></li>
+        <li><a href="/conditionals.html">Conditionals</a></li>
+        <li><a href="/loops.html">Loops</a></li>
+        <li><a href="/arrays.html">Arrays</a></li>
+        <li><a href="/functions.html">Functions</a></li>
+        <li><a href="/classes.html">Classes</a></li>
+        <li><a href="/classes-inheritance.html">Classes: Inheritance</a></li>
+        <li><a href="/classes-visibility.html">Classes: Visibility</a></li>
+        <li><a href="/classes-constructor.html">Classes: Constructor</a></li>
+        <li><a href="/static.html">Static</a></li>
+        <li><a href="/interfaces.html">Interfaces</a></li>
+        <li><a href="/abstract.html">Abstract Classes</a></li>
+        <li><a href="/exceptions.html">Exceptions</a></li>
+    </ol>
+    <a href="/credits.html">Credits</a>
+</div>
+    </div>
+</div>
+</body>
+
+</html>

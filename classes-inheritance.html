@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>Classes: Inheritance</title>
+    <meta name="description" content="Extend your objects">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="/css/site.8b05a34b.css">
+    <link rel="icon" href="/favicon-32.png">
+    <script src="/js/site.73b55f3c.js"></script>
+</head>
+
+<body>
+
+<div class="container small center">
+    <div class="menu">
+    <button class="menu-button" title="Open Menu">
+        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M7 3H2v14h5V3zm2 0v14h9V3H9zM0 3c0-1.1.9-2 2-2h16a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3zm3 1h3v2H3V4zm0 3h3v2H3V7zm0 3h3v2H3v-2z"/></svg></div>
+        Table of Contents
+    </button>
+</div>
+
+    <h1>Classes: Inheritance</h1>
+    <h3 class="subtitle">Extend your objects</h3>
+    <p>In PHP, a class can extend another class, inheriting the parent class'
+properties and methods. To make a class a child of another, use the <code>extends</code>
+keyword after the class name.</p>
+<pre><code class="language-php">&lt;?php
+
+class Vehicle
+{
+    public function drive()
+    {
+        echo "driving...\n";
+    }
+}
+
+class Truck extends Vehicle {}</code></pre>
+<p>Using the <code>drive</code> method on the <code>Truck</code> class does not cause an error because <code>Truck</code> extends <code>Vehicle</code>.</p>
+<pre><code class="language-php">$truck = new Truck();
+$truck-&gt;drive();</code></pre>
+<p>Even though the child class inherits a parent class' properties and methods,
+the child can still override the parent.</p>
+<pre><code class="language-php">class Tractor extends Vehicle
+{
+    public function drive()
+    {
+        echo "driving slowly...\n";
+    }
+}</code></pre>
+<p>The drive function now outputs &quot;driving slowly...&quot; instead of &quot;driving...&quot;.</p>
+<pre><code class="language-php">$tractor = new Tractor();
+$tractor-&gt;drive();</code></pre>
+<p>A class can use a parent's property or method from the <code>$this</code> variable.</p>
+<pre><code class="language-php">class Motorcycle extends Vehicle
+{
+    public function pushPedal()
+    {
+        $this-&gt;drive();
+    }
+}</code></pre>
+<p>The <code>pushPedal</code> method outputs &quot;driving...&quot;.</p>
+<pre><code class="language-php">$cycle = new Motorcycle();
+$cycle-&gt;pushPedal();</code></pre>
+<p>If you override a parent's property or method, the <code>$this</code> variable will refer to the child's
+implementation of the property or method. To call the parent's property or method explicity,
+use the <code>parent</code> keyword.</p>
+<pre><code class="language-php">class Racecar extends Vehicle
+{
+    public function drive()
+    {
+        parent::drive();
+
+        echo "driving even faster...\n";
+    }
+}</code></pre>
+<p>The <code>drive</code> method on <code>Racecar</code> now outputs &quot;driving...&quot; and &quot;driving even faster...&quot;.</p>
+<pre><code class="language-php">$racecar = new Racecar();
+$racecar-&gt;drive();</code></pre>
+    <div class="clearfix"></div>
+    <div class="navigate-links">
+                    <a href="/classes.html" title="Previous" id="prev-link">
+                <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 20a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm8-10a8 8 0 1 0-16 0 8 8 0 0 0 16 0zM7.46 9.3L11 5.75l1.41 1.41L9.6 10l2.82 2.83L11 14.24 6.76 10l.7-.7z"/></svg></div>
+                Previous
+            </a>
+                            <a href="/classes-visibility.html" title="Next" id="next-link">
+                Next
+                <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 0a10 10 0 1 1 0 20 10 10 0 0 1 0-20zM2 10a8 8 0 1 0 16 0 8 8 0 0 0-16 0zm10.54.7L9 14.25l-1.41-1.41L10.4 10 7.6 7.17 9 5.76 13.24 10l-.7.7z"/></svg></div>
+            </a>
+            </div>
+</div>
+
+
+<div class="modal closed">
+    <div class="modal-content">
+        <button class="modal-button right" title="Close">
+            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm1.41-1.41A8 8 0 1 0 15.66 4.34 8 8 0 0 0 4.34 15.66zm9.9-8.49L11.41 10l2.83 2.83-1.41 1.41L10 11.41l-2.83 2.83-1.41-1.41L8.59 10 5.76 7.17l1.41-1.41L10 8.59l2.83-2.83 1.41 1.41z"/></svg></div>
+        </button>
+        <div class="table-of-contents">
+    <h4>Table of Contents</h4>
+    <ul class="list-plain">
+        <li><a href="/">Preface</a></li>
+        <li><a href="/installing-php.html">Installing PHP</a></li>
+    </ul>
+    <ol>
+        <li><a href="/basics.html">Basics</a></li>
+        <li><a href="/variables.html">Variables</a></li>
+        <li><a href="/arithmetic.html">Arithmetic</a></li>
+        <li><a href="/strings.html">Strings</a></li>
+        <li><a href="/comparisons.html">Comparisons</a></li>
+        <li><a href="/boolean-logic.html">Boolean Logic</a></li>
+        <li><a href="/conditionals.html">Conditionals</a></li>
+        <li><a href="/loops.html">Loops</a></li>
+        <li><a href="/arrays.html">Arrays</a></li>
+        <li><a href="/functions.html">Functions</a></li>
+        <li><a href="/classes.html">Classes</a></li>
+        <li><a href="/classes-inheritance.html">Classes: Inheritance</a></li>
+        <li><a href="/classes-visibility.html">Classes: Visibility</a></li>
+        <li><a href="/classes-constructor.html">Classes: Constructor</a></li>
+        <li><a href="/static.html">Static</a></li>
+        <li><a href="/interfaces.html">Interfaces</a></li>
+        <li><a href="/abstract.html">Abstract Classes</a></li>
+        <li><a href="/exceptions.html">Exceptions</a></li>
+    </ol>
+    <a href="/credits.html">Credits</a>
+</div>
+    </div>
+</div>
+</body>
+
+</html>
