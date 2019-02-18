@@ -155,5 +155,11 @@ return [
             'previous' => 'abstract',
             'next' => '',
         ]),
+        Page::create('web-http', 'web/01-http.md', [
+            'title' => 'HTTP',
+            'subtitle' => 'Understanding the format of the web',
+            'previous' => 'exceptions',
+            'next' => '',
+        ]),
     ],
 ];
