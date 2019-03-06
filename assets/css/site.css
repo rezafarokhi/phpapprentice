@@ -112,6 +112,7 @@ button:hover .icon svg {
 }
 .container {
     max-width: 1050px;
+    text-align: right;
 }
 .container.small {
     max-width: 750px;
@@ -155,7 +156,8 @@ button:hover .icon svg {
 }
 .navigate-links {
     margin: 1em 0;
-    float: right;
+    float: left;
+    font-size: 20px;
 }
 .navigate-links .icon {
     vertical-align: middle;
@@ -167,16 +169,26 @@ button:hover .icon svg {
     fill: $primary-color-dark;
 }
 .navigate-links a {
-    margin-left: 1em;
+    margin-right: 1em;
+    float: right;
 }
 .navigate-links a:hover {
     text-decoration: none;
+}
+
+.table-of-contents{
+    text-align: right;
 }
 .table-of-contents h4 {
     margin-top: 0;
 }
 .table-of-contents ol {
     margin: 1em 0;
+    padding-right: 1em;
+}
+
+.table-of-contents ol li{
+   text-align: right;
 }
 .table-of-contents .section-title {
     font-weight: bold;
@@ -247,6 +259,7 @@ button:hover .icon svg {
 .modal-content {
     display: block;
     position: relative;
+    float: right;
     padding: 1em;
     background-color: $white;
     max-width: 20em;
@@ -264,8 +277,8 @@ button:hover .icon svg {
     display: none;
 }
 @keyframes animateleft {
-    from {left: -300px; opacity: 0}
-    to {left: 0; opacity: 1}
+    from {right: -300px; opacity: 0}
+    to {right: 0; opacity: 1}
 }
 .logo-404 {
     max-width: 200px;

@@ -11,14 +11,16 @@
     <div class="navigate-links">
         <?php if (!empty($previous)): ?>
             <a href="<?= page_path($previous) ?>" title="Previous" id="prev-link">
-                <div class="icon"><?= icon('cheveron-outline-left') ?></div>
-                Previous
+                قبلی
+                <div class="icon"><?= icon('cheveron-outline-right') ?></div>
+
             </a>
         <?php endif ?>
         <?php if (!empty($next)): ?>
             <a href="<?= page_path($next) ?>" title="Next" id="next-link">
-                Next
-                <div class="icon"><?= icon('cheveron-outline-right') ?></div>
+
+                <div class="icon"><?= icon('cheveron-outline-left') ?></div>
+                بعدی
             </a>
         <?php endif ?>
     </div>

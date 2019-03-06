@@ -87,6 +87,7 @@ function config(string $key) {
     $config = $GLOBALS['APPRENTICE_CONFIG'] ?? [];
 
     return $config[$key] ?? null;
+
 }
 
 /**
