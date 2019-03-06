@@ -6,14 +6,23 @@ $white: #FFF;
 $drop-shadow: rgba(0, 0, 0, 0.4);
 $code-background: #FDF6E3;
 
+@font-face {
+    font-family: 'yekan';
+    src:url('http://cdn.font-store.ir/fonts/yekan/Yekan-Regular.woff2') format('woff2'),
+    url('http://cdn.font-store.ir/fonts/yekan/Yekan-Regular.woff') format('woff'),
+    url('http://cdn.font-store.ir/fonts/yekan/Yekan-Regular.ttf') format('truetype'),
+    url('http://cdn.font-store.ir/fonts/yekan/Yekan-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
 body {
-    font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+    font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, "yekan", yekan;
     font-size: 16px;
     padding-top: 1em;
     padding-bottom: 1em;
 }
 button {
-    font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+    font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, "yekan", yekan;
 }
 code {
     background-color: #F0F0F0;
@@ -298,4 +307,11 @@ button:hover .icon svg {
     font-size: 2em;
     margin: 1em auto;
     text-align: center;
+}
+.firstCrt{
+    text-align: left;
+}
+
+.persianCrt{
+    text-align: right;
 }
