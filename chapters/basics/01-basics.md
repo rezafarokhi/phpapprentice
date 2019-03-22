@@ -1,10 +1,9 @@
-If you want to follow along by writing code, start by downloading a code editor. I recommend
-[Visual Studio Code](https://code.visualstudio.com/) or [Sublime Text](https://www.sublimetext.com/).
-Next, create a new file in your editor called `basics.php` and save it anywhere on your computer, like a folder
-in your documents called `phpapprentice`. Now, we can write some PHP.
+اگر می خواهید این آموزش را با نوشتن کد ادامه دهید من پیشنهاد می کنم ابتدا یک تکست ادیتور دانلود کنید
+[Visual Studio Code](https://code.visualstudio.com/) یا [Sublime Text](https://www.sublimetext.com/).
 
-All PHP files must start with a `<?php` tag unless it is for a html template.
-(We will learn about html templates later.)
+سپس یک فایل با نام "basics.php" بسازید و در هر مسیری از سیستم خود که ترجیح می دهید ذخیره کنید, حالا می توانیم کمی کد پی اچ پی بنویسیم.
+تمام کد های پی اچ پی باید با تگ `php?>` شروع شوند مگر اینکه بخواهیم از یک تمپلیت HTML استفاده کنیم.
+(در فصل های بعدی در مورد تمپلیت ها صحبت خواهیم کرد.)
 ```php
 <?php
 

@@ -37,6 +37,7 @@ pre, pre code {
     margin: 0 !important;
     border-radius: 0 !important;
     padding: 0.5em 0 0.5em 0;
+    direction: ltr;
 }
 a {
     color: $primary-color; /* #4078f2 */
@@ -56,6 +57,7 @@ p {
     line-height: 1.5;
     margin-top: 1.5em;
     margin-bottom: 0.75em;
+    direction:rtl;
 }
 ol {
     padding-left: 1em;
